@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Information Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css">
+</head>
+
+
+<body class="bg-gray-100">
+  <div class="container mx-auto px-4 py-8 flex flex-col md:flex-row justify-center">
+    <div class="w-full md:w-1/2 md:mr-4 mb-8 md:mb-0">
+      <div class="bg-white rounded-lg shadow-md p-8">
+
+        <h2 class="text-2xl font-bold mb-4">Student Information Form</h2>
+        
+
+
+        <!-- Student information capture form --->
+        <form>
+
+          <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="name">
+              Name:
+            </label>
+            <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" name="name" type="text" placeholder="Enter your name" required>
+          </div>
+          
+          <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="phone">
+              Phone Number:
+            </label>
+            <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" name="phone" type="tel" placeholder="Enter your phone number" required>
+          </div>     
+
+          <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="email">
+              Email:
+            </label>
+            <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" name="email" type="email" placeholder="Enter your email address" required>
+          </div>
+
+          
+          <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="gender">
+              Gender:
+          </label>
+            <select class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="gender" name="gender" required>
+              <option value="">Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            Submit
+          </button>
+        </form> <!-- end of information capture form -->
+      </div>
+    </div>
+
+
+
+
+    <!-- Student information view Table -->
+    <div class="w-full md:w-1/2">
+      <div class="bg-white rounded-lg shadow-md p-8">
+
+
+        <h2 class="text-2xl font-bold mb-4">Student Information Table</h2>
+        <table class="table-auto w-full">
+          <thead>
+            <tr>
+              <th class="px-4 py-2">Name</th>
+              <th class="px-4 py-2">Gender</th>
+              <th class="px-4 py-2">CGPA</th>
+              <th class="px-4 py-2">Photo</th>
+            </tr>
+          </thead>
+          
+          <tbody><!--student 1-->
+            <tr>
+              <td class="border px-4 py-2">John Doe</td>
+              <td class="border px-4 py-2">Male</td>
+              <td class="border px-4 py-2">3.5</td>
+              <td class="border px-4 py-2"><img src="https://via.placeholder.com/50" alt="Student Photo"></td>
+            </tr>
+
+            <tr><!--student 2-->
+              <td class="border px-4 py-2">Jane Smith</td>
+              <td class="border px-4 py-2">Female</td>
+              <td class="border px-4 py-2">3.8</td>
+              <td class="border px-4 py-2"><img src="https://via.placeholder.com/50" alt="Student Photo"></td>
+            </tr>
+
+            <tr><!--student 3-->
+              <td class="border px-4 py-2">Bob Johnson</td>
+              <td class="border px-4 py-2">Male</td>
+              <td class="border px-4 py-2">3.2</td>
+              <td class="border px-4 py-2"><img src="https://via.placeholder.com/50" alt="Student Photo"></td>
+            </tr>
+
+            <tr><!--student 4-->
+              <td class="border px-4 py-2">Samantha Lee</td>
+              <td class="border px-4 py-2">Female</td>
+              <td class="border px-4 py-2">3.9</td>
+              <td class="border px-4 py-2"><img src="https://via.placeholder.com/50" alt="Student Photo"></td>
+            </tr>
+
+            <tr><!--student 5-->
+              <td class="border px-4 py-2">Tom Wilson</td>
+              <td class="border px-4 py-2">Male</td>
+              <td class="border px-4 py-2">3.6</td>
+              <td class="border px-4 py-2"><img src="https://via.placeholder.com/50" alt="Student Photo"></td>
+            </tr>
+          </tbody>
+
+
+          <tfoot>
+            <tr>
+              <td colspan="4" class="text-right">Total Students: 5</td>
+            </tr>
+          </tfoot>
+
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
