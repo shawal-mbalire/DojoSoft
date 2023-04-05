@@ -1,0 +1,47 @@
+#overall_container {
+    display: flex;
+    justify-content: center;
+}
+
+#student_form{
+    border: 1px solid gray;
+    justify-content: center;
+    padding: 1rem;
+    width: 40vw;
+}
+#info_table{
+    border: 1px solid gray;
+    justify-content: center;
+    padding: 1rem;
+    width: 40vw;
+}
+
+form{
+    display: grid;
+    row-gap: 0.25rem;
+}
+input{
+    width: 100%;
+}
+select{
+    width: 100%;
+}
+#submit_button{
+    width: 25%;
+    background-color: mediumblue;
+    color: aliceblue;
+}
+table {
+    border-collapse: collapse;
+    border: none;
+    width:100%
+}
+
+tr {
+    border-top: 1px solid gray;
+}
+
+
+td {
+    border: none !important;
+}
