@@ -27,7 +27,7 @@ select{
     width: 100%;
 }
 #submit_button{
-    width: 25%;
+    width: fit-content;
     background-color: mediumblue;
     color: aliceblue;
 }
@@ -50,6 +50,9 @@ tr {
 
 th{
     text-align: left;
+}
+#tablehead{
+    border-top: none;
 }
 img{
     height: 2rem;
