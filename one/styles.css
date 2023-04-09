@@ -34,14 +34,26 @@ select{
 table {
     border-collapse: collapse;
     border: none;
-    width:100%
+    width:100%;
+    
 }
-
+thead{
+    justify-content: left;
+}
 tr {
     border-top: 1px solid gray;
 }
 
+#lastrow{
+    text-align: right;
+}
 
-td {
-    border: none !important;
+th{
+    text-align: left;
+}
+img{
+    height: 2rem;
+    border-radius: 50%;
+    border-color: black;
+    border: 3px solid;
 }

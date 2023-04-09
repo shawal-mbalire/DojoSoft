@@ -20,7 +20,7 @@
 
     <div id="student_form">
 
-      <h2 >Personal Information</h2>
+      <h2 >Personal Details</h2>
       <!-- Student information capture form --->
       <form>
 
@@ -40,11 +40,11 @@
         </div>
 
 
-        <div class="form_input"><!--<label class="block text-gray-700 font-bold mb-2" for="gender">
+        <div ><!--<label class="block text-gray-700 font-bold mb-2" for="gender">
           Gender:
         </label>-->
           
-          <select id="gender" name="gender" required>
+          <select class="form_input" id="gender" name="gender" required title="gender">
             <option value="">Select Gender</option>
             <option value="male">  Male</option>
             <option value="female">Female</option>
@@ -64,11 +64,11 @@
     <div id="info_table">
 
 
-      <h2 class="text-2xl font-bold mb-4">Students</h2>
-      <table class="table-auto w-full">
+      <h2>Students</h2>
+      <table>
         <thead>
-          <tr>
-            <th >No.</th>
+          <tr id="tablehead">
+            <th >#</th>
             <th >Name</th>
             <th >Gender</th>
             <th >CGPA</th>
@@ -82,7 +82,7 @@
             <td >John Doe</td>
             <td >Male</td>
             <td >3.5</td>
-            <td ><img src="https://via.placeholder.com/50" ></td>
+            <td ><img src="user.jpeg" title="userimg"></td>
           </tr>
 
           <tr><!--student 2-->
@@ -90,7 +90,7 @@
             <td >Jane Smith</td>
             <td >Female</td>
             <td >3.8</td>
-            <td ><img src="https://via.placeholder.com/50" ></td>
+            <td ><img src="user.jpeg" title="userimg"></td>
           </tr>
 
           <tr><!--student 3-->
@@ -98,7 +98,7 @@
             <td >Bob Johnson</td>
             <td >Male</td>
             <td >3.2</td>
-            <td ><img src="https://via.placeholder.com/50" ></td>
+            <td ><img src="user.jpeg" title="userimg"></td>
           </tr>
 
           <tr><!--student 4-->
@@ -106,7 +106,7 @@
             <td >Samantha Lee</td>
             <td >Female</td>
             <td >3.9</td>
-            <td ><img src="https://via.placeholder.com/50" ></td>
+            <td ><img src="user.jpeg" title="userimg" ></td>
           </tr>
 
           <tr><!--student 5-->
@@ -114,14 +114,18 @@
             <td >Tom Wilson</td>
             <td >Male</td>
             <td >3.6</td>
-            <td ><img src="https://via.placeholder.com/50" ></td>
+            <td ><img src="user.jpeg" title="userimg"></td>
           </tr>
         </tbody>
 
 
         <tfoot>
           <tr>
-            <td colspan="4" class="text-right">Total Students: 5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Rows :5</td>
           </tr>
         </tfoot>
 
