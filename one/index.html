@@ -17,53 +17,37 @@
 
 <body>
   <div id="overall_container">
-
     <div id="student_form">
-
       <h2 >Personal Details</h2>
-      <!-- Student information capture form --->
       <form>
-
         <div class="form_input">
-          <!--<label>Name:</label>-->
           <input id="name" name="name" type="text" placeholder="Enter your name" required>
         </div>
-
-        <div class="form_input"><!--<label for="phone">Phone Number:</label>-->
-          
+        <div class="form_input">
           <input id="phone" name="phone" type="tel" placeholder="Enter your phone number" required>
         </div>
-
-        <div class="form_input"><!--<label for="email">Email:</label>-->
-          
+        <div class="form_input">
           <input id="email" name="email" type="email" placeholder="Enter your email address" required>
         </div>
-
-
-        <div ><!--<label class="block text-gray-700 font-bold mb-2" for="gender">
-          Gender:
-        </label>-->
-          
-          <select class="form_input" id="gender" name="gender" required title="gender">
-            <option value="">Select Gender</option>
+        <div class="form_input">
+          <select id="gender" name="gender" required title="gender">
+            <option value="none">Select Gender</option>
             <option value="male">  Male</option>
             <option value="female">Female</option>
             <option value="other"> Other</option>
           </select>
         </div>
-
         <button id="submit_button" type="submit">Submit</button>
-      </form> <!-- end of information capture form -->
-
+      </form>
     </div>
-
-    <!--Adding a vertical line between divs-->
-
-
-    <!-- Student information view Table -->
+    <!---------------------------------- 
+      ----------------------------------
+      ----------------------------------
+      Student information view Table 
+      ----------------------------------
+    ------------------------------------
+  ------------------------------------->
     <div id="info_table">
-
-
       <h2>Students</h2>
       <table>
         <thead>
@@ -75,7 +59,6 @@
             <th >Photo</th>
           </tr>
         </thead>
-
         <tbody><!--student 1-->
           <tr>
             <td >1</td>
@@ -84,7 +67,6 @@
             <td >3.5</td>
             <td ><img src="user.jpeg" title="userimg"></td>
           </tr>
-
           <tr><!--student 2-->
             <td >2  </td>
             <td >Jane Smith</td>
@@ -92,7 +74,6 @@
             <td >3.8</td>
             <td ><img src="user.jpeg" title="userimg"></td>
           </tr>
-
           <tr><!--student 3-->
             <td >3</td>
             <td >Bob Johnson</td>
@@ -100,7 +81,6 @@
             <td >3.2</td>
             <td ><img src="user.jpeg" title="userimg"></td>
           </tr>
-
           <tr><!--student 4-->
             <td >4</td>
             <td >Samantha Lee</td>
@@ -108,7 +88,6 @@
             <td >3.9</td>
             <td ><img src="user.jpeg" title="userimg" ></td>
           </tr>
-
           <tr><!--student 5-->
             <td >5</td>
             <td >Tom Wilson</td>
@@ -117,8 +96,6 @@
             <td ><img src="user.jpeg" title="userimg"></td>
           </tr>
         </tbody>
-
-
         <tfoot>
           <tr>
             <td></td>
@@ -128,10 +105,8 @@
             <td>Rows :5</td>
           </tr>
         </tfoot>
-
       </table>
     </div>
-
   </div>
 </body>
 

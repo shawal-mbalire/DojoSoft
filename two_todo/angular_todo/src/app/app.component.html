@@ -28,9 +28,11 @@
   <div id="todo_viewer" class="container">
     <h3 class="todo_viewer">Todo List {{uncomplete_todos}}</h3>
 
-    <div class="progress_bar">
-      Progress bar {{percentage}}percent
-      <div class="progress_bar"></div>
+    <div class="wrapper">
+      Progress bar {{percentage}}
+      <div class="progress-bar">
+        <span class="progress-bar-fill" [style.width.%]="percentage"> {{percentage}} %</span>
+      </div>
     </div>
 
     <div class="todo_list" *ngFor="let todo of todos">

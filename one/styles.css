@@ -6,13 +6,13 @@
 #student_form{
     border: 1px solid gray;
     justify-content: center;
-    padding: 1rem;
+    padding: 2rem;
     width: 40vw;
 }
 #info_table{
     border: 1px solid gray;
     justify-content: center;
-    padding: 1rem;
+    padding: 2rem;
     width: 40vw;
 }
 
@@ -21,11 +21,12 @@ form{
     row-gap: 0.25rem;
 }
 input{
-    width: 100%;
+    width: 40vw;
 }
 select{
     width: 100%;
 }
+
 #submit_button{
     width: fit-content;
     background-color: mediumblue;
