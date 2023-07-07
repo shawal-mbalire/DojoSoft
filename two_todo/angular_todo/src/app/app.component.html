@@ -13,11 +13,11 @@
       <label for="title">ToDo</label><input type="text" placeholder="Enter To Do title"  class="input_fw"
         name="title" id="title" ngModel required>
 
-      <label for="todo_desc">Description</label><input 
-        type="text"         
+      <label for="todo_desc">Description</label><input
+        type="text"
         placeholder="Describe the ToDo (optional)"
-        class="input_fw" 
-        name="todo_desc" 
+        class="input_fw"
+        name="todo_desc"
         id="todo_desc" ngModel>
 
       <button type="button" class="form_btn" (click)="onSubmit(todo_form)">Create To Do</button>
@@ -26,12 +26,12 @@
   </div>
 
   <div id="todo_viewer" class="container">
-    <h3 class="todo_viewer">Todo List {{uncomplete_todos}}</h3>
+    <h3 class="todo_viewer">Todo tasks: {{uncomplete_todos}}</h3>
 
-    <div class="wrapper">
-      Progress bar {{percentage}}
+    <div class="wrapper" *ngIf="todos?.length">
+      Progress: {{percentage}} %
       <div class="progress-bar">
-        <span class="progress-bar-fill" [style.width.%]="percentage"> {{percentage}} %</span>
+        <span class="progress-bar-fill" [style.width.%]="percentage"> {{percentage}}%</span>
       </div>
     </div>
 
@@ -51,7 +51,7 @@
     </div>
 
     <hr><br>
-    <h3 id="completed-tasks">Completed Tasks {{complete_todos}}</h3>
+    <h3 id="completed-tasks" *ngIf="todos?.length">Completed Tasks {{complete_todos}}</h3>
     <hr>
 
     <div class="todo-list" *ngFor="let todo of todos">

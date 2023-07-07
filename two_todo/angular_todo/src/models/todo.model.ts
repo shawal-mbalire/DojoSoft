@@ -8,4 +8,6 @@ export class Todo{
         public isComplete: boolean,
         public showDescription: boolean
     ){ }
+
+
 }

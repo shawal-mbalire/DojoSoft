@@ -19,9 +19,9 @@ export class AppComponent {
 
 
   todos: Todo[] = [] //empty todo list
-  // get item from local storage and parse it to JSON
-  //todos_json = JSON.parse(localStorage.getItem('todos'));
-  //percentage_json = JSON.parse(localStorage.getItem('percentage'));
+  // get item from local storage and parse it to JSONe
+  // todos_json = JSON.parse(localStorage.getItem('todos'));
+  // percentage_json = JSON.parse(localStorage.getItem('percentage'));
 
   // constructor() {
   //   // if there is no item in local storage, set it to empty array
@@ -32,12 +32,12 @@ export class AppComponent {
   //     this.todos = this.todos_json.data;
   //   }
 
-  //   if (this.percentage_json == null) {
-  //     localStorage.setItem('percentage', JSON.stringify(0));
-  //   } else {
-  //     this.percentage = this.percentage_json;
-  //   }
-  // }
+    if (this.percentage_json == null) {
+      localStorage.setItem('percentage', JSON.stringify(0));
+    } else {
+      this.percentage = this.percentage_json;
+    }
+  }
 
 
 
@@ -55,6 +55,7 @@ export class AppComponent {
     form.resetForm();
 
     let data = { data: this.todos }
+    localStorage.setItem('percentage', JSON.stringify(this.percentage));
     localStorage.setItem('percentage', JSON.stringify(this.percentage));
     localStorage.setItem('todos', JSON.stringify(data));
     //console.log(this.todos_json)
