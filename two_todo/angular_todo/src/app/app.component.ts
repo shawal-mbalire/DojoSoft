@@ -18,27 +18,8 @@ export class AppComponent {
   percentage = 100*this.complete_todos / (this.complete_todos+this.uncomplete_todos);
 
 
-  todos: Todo[] = [] //empty todo list
-  // get item from local storage and parse it to JSONe
-  // todos_json = JSON.parse(localStorage.getItem('todos'));
-  // percentage_json = JSON.parse(localStorage.getItem('percentage'));
-
-  // constructor() {
-  //   // if there is no item in local storage, set it to empty array
-  //   // else set it to the item in local storage
-  //   if (this.todos_json == null) {
-  //     localStorage.setItem('todos', JSON.stringify({ data: [] }));
-  //   } else {
-  //     this.todos = this.todos_json.data;
-  //   }
-
-    if (this.percentage_json == null) {
-      localStorage.setItem('percentage', JSON.stringify(0));
-    } else {
-      this.percentage = this.percentage_json;
-    }
-  }
-
+  // initialize todos as items from local storage
+  todos: Todo[] = this.loadData();
 
 
   onSubmit(form: NgForm) {
@@ -99,6 +80,14 @@ export class AppComponent {
 
     this.percentage = 100*this.complete_todos / (this.complete_todos+this.uncomplete_todos);
     localStorage.setItem('percentage', JSON.stringify(this.percentage));
+  }
+
+  loadData() {
+    this.todos = JSON.parse(localStorage.getItem('todos') as string)?.data || [];
+    this.percentage = JSON.parse(localStorage.getItem('percentage') as string) || 0;
+    this.complete_todos = JSON.parse(localStorage.getItem('complete_todos')as string) || 0;
+    this.uncomplete_todos = JSON.parse(localStorage.getItem('uncomplete_todos')as string) || 0;
+    return this.todos;
   }
 
 }
