@@ -37,7 +37,8 @@ export class AppComponent {
 
     let data = { data: this.todos }
     localStorage.setItem('percentage', JSON.stringify(this.percentage));
-    localStorage.setItem('percentage', JSON.stringify(this.percentage));
+    localStorage.setItem('uncomplete_todos', JSON.stringify(this.uncomplete_todos));
+    localStorage.setItem('complete_todos', JSON.stringify(this.complete_todos));
     localStorage.setItem('todos', JSON.stringify(data));
     //console.log(this.todos_json)
   }
@@ -57,6 +58,8 @@ export class AppComponent {
 
     let data = { data: this.todos }
     localStorage.setItem('todos', JSON.stringify(data));
+    localStorage.setItem('uncomplete_todos', JSON.stringify(this.uncomplete_todos));
+    localStorage.setItem('complete_todos', JSON.stringify(this.complete_todos));
 
     this.percentage = 100*this.complete_todos / (this.complete_todos+this.uncomplete_todos);
     localStorage.setItem('percentage', JSON.stringify(this.percentage));
@@ -70,6 +73,8 @@ export class AppComponent {
 
     this.percentage = 100*this.complete_todos / (this.complete_todos+this.uncomplete_todos);
     localStorage.setItem('percentage', JSON.stringify(this.percentage));
+    localStorage.setItem('uncomplete_todos', JSON.stringify(this.uncomplete_todos));
+    localStorage.setItem('complete_todos', JSON.stringify(this.complete_todos));
   }
 
   unComplete(id: Guid) {
@@ -80,6 +85,8 @@ export class AppComponent {
 
     this.percentage = 100*this.complete_todos / (this.complete_todos+this.uncomplete_todos);
     localStorage.setItem('percentage', JSON.stringify(this.percentage));
+    localStorage.setItem('uncomplete_todos', JSON.stringify(this.uncomplete_todos));
+    localStorage.setItem('complete_todos', JSON.stringify(this.complete_todos));
   }
 
   loadData() {
