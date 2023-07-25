@@ -4,7 +4,7 @@ from base.models import Todo, User
 from .serialisers import TodoSerializer
 
 @api_view(['GET'])
-def getData(request):
+def getAllTodos(request):
     todos = Todo.objects.all()
     serializer = TodoSerializer(todos, many=True)
     return Response(serializer.data)
@@ -17,11 +17,27 @@ def addTodo(request):
     return Response(serialiser.data)
 
 # user must be able to CRUD
-
 # create
+@api_view(['POST','GET'])
+def createUserTodo(request):
+    serialiser = TodoSerializer(data=request.data)
+    if serialiser.is_valid():
+        serialiser.save()
+    return Response(serialiser.data)
 
 # read
+@api_view(['GET'])
+def getUserTodos(request):
+    todos = Todo.objects.all()
+    serializer = TodoSerializer(todos, many=True)
+    return Response(serializer.data)
 
 # update
+@api_view(['POST'])
+def updateUserTodo(request):
+    pass
 
 # delete
+@api_view(['GET'])
+def deleteUserTodo(request):
+    pass
