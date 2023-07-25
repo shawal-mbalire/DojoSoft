@@ -1,6 +1,6 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from base.models import Todo
+from base.models import Todo, User
 from .serialisers import TodoSerializer
 
 @api_view(['GET'])
@@ -15,3 +15,13 @@ def addTodo(request):
     if serialiser.is_valid():
         serialiser.save()
     return Response(serialiser.data)
+
+# user must be able to CRUD
+
+# create
+
+# read
+
+# update
+
+# delete
