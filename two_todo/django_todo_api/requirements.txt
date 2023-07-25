@@ -1,2 +1,7 @@
+# framework dependencies
 django
 djangorestframework
+django-seed
+
+# python dependencies
+python-dotenv
