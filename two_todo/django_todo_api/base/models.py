@@ -5,7 +5,8 @@ from django.db import models
 class User(models.Model):
     # id = db.Column(db.Integer,primary_key=True)
     username = models.CharField(max_length=100,unique=True,blank=False)
-    password_hash = models.TextField(blank=False)
+    password = models.CharField(max_length=65,blank=False,null=True)
+
     # todos = db.relationship('Todo')
 
     def __repr__(self) -> str:

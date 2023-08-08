@@ -2,13 +2,19 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.getAllTodos),
-    path('add_gen/', views.addTodo),
+    path('users', views.readUsers),
+    path('todos', views.readTodos),
 
-    # paths for crud
-    path('add/', views.createUserTodo),
-    path('read/', views.getUserTodos),
-    path('update/', views.updateUserTodo),
-    path('delete/', views.deleteUserTodo),
+    # paths for todo crud
+    path('todo/create', views.createUserTodo),
+    path('todo/read'  , views.readUserTodos),
+    path('todo/update', views.updateUserTodo),
+    path('todo/delete', views.deleteUserTodo),
+
+    # paths for user crud
+    path('user/create', views.createUser    ),
+    path('user/read'  , views.readUser),
+    path('user/update', views.updateUser),
+    path('user/delete', views.deleteUser),
 
 ]

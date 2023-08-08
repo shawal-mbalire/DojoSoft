@@ -1,7 +1,10 @@
 # framework dependencies
 django
 djangorestframework
+djangorestframework-api-key
+
 django-seed
+psycopg2-binary
 
 # python dependencies
 python-dotenv
