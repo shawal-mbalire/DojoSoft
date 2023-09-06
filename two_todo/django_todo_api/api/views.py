@@ -42,20 +42,26 @@ def deleteUserTodo(request):
 
 
 # admin must crud the users
-@api_view(['POST','GET'])
+@api_view(['POST'])
 def createUser(request):
     serialiser = UserSerializer(data=request.data)
     if serialiser.is_valid():
         serialiser.save()
     return Response(serialiser.data)
-@api_view(['POST','GET'])
+@api_view(['GET'])
 def readUser(request):
     todos = User.objects.all()
     serializer = UserSerializer(todos, many=True)
     return Response(serializer.data)
-@api_view(['POST','GET'])
-def updateUser(request):
-    pass
-@api_view(['POST','GET'])
-def deleteUser(request):
-    pass
+@api_view(['PUT'])
+def updateUser(request, uuid):
+    user = User.objects.get(id=uuid)
+    serialiser = UserSerializer(instance=user,data=request.data)
+    if serialiser.is_valid():
+        serialiser.save()
+    return Response(serialiser.data)
+@api_view(['DELETE'])
+def deleteUser(request,uuid):
+    user = User.objects.get(id=uuid)
+    user.delete()
+    return Response('Item Succesfully deleted')
