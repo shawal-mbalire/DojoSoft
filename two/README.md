@@ -1,7 +1,16 @@
-# Vue 3 + Vite
+# Front-end
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## frameworks
 
-## Recommended IDE Setup
+- JavaScript fundamentals
+  2 - React JS/Vue JS/
+  1 - Angular JS
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## validation
+
+- Use of JavaScript and front-end frameworks
+- A ToDo app that takes in user todos
+- A todo should be able to be marked as complete
+- The app should be able to remember user todos and their status even after refreshing the page or restarting the browser
+- The todos  should be in descending order i.e. newest first.
+- The list of todos should be displayed with a progress bar indicating completion status
