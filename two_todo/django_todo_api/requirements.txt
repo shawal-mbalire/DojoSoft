@@ -1,10 +1,13 @@
 # framework dependencies
 django
+django-seed
 djangorestframework
 djangorestframework-api-key
+django-cors-headers
 
-django-seed
-psycopg2-binary
 
 # python dependencies
+pyyaml
 python-dotenv
+psycopg2-binary
+

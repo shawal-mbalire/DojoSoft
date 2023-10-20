@@ -7,14 +7,24 @@ urlpatterns = [
 
     # paths for todo crud
     path('todo/create', views.createUserTodo,name='createUserTodo'),
-    path('todo/read'  , views.readUserTodos,name='readUserTodos'),
-    path('todo/update', views.updateUserTodo,name='updateUserTodo'),
-    path('todo/delete', views.deleteUserTodo,name='deleteUserTodo'),
+    path('todo/read/<int:user_id>'  , views.readUserTodos,name='readUserTodos'),
+    path('todo/update/<int:todo_id>', views.updateUserTodo,name='updateUserTodo'),
+    path('todo/delete/<int:todo_id>', views.deleteUserTodo,name='deleteUserTodo'),
 
     # paths for user crud
-    path('user/create', views.createUser,name='createUser'    ),
-    path('user/read'  , views.readUser,name='readUser'),
-    path('user/update/<str:uuid>', views.updateUser, name='updateUser'),
-    path('user/delete', views.deleteUser,name='deleteUser'),
+    #path('user/create', views.createUser,name='createUser', ),
+    #path('user/login'  , views.loginUser,name='loginUser'),
+    path('user/update/<int:user_id>', views.updateUser, name='updateUser'),
+    path('user/delete/<int:user_id>', views.deleteUser,name='deleteUser'),
+
+
+
+
+    path('users/<int:id>',views.UserDetailAPIView.as_view()),
+    path('users/',views.UserListCreateAPIView.as_view()),
+    path('users/update/<int:id>/',views.UserUpdateAPIView.as_view()),
+    path('users/delete/<int:id>/',views.UserDestroyAPIView.as_view()),
+
+
 
 ]
