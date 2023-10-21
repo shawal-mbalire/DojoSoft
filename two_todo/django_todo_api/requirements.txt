@@ -8,6 +8,8 @@ django-cors-headers
 
 # python dependencies
 pyyaml
+requests
 python-dotenv
 psycopg2-binary
 
+djangorestframework-simplejwt

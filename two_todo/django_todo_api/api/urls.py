@@ -1,30 +1,12 @@
-from django.urls import path
-from . import views
+from .                              import views
+from django.urls                    import path
+from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
-    path('users', views.readUsers, name='readUsers'),
-    path('todos', views.readTodos, name='readTodos'),
-
-    # paths for todo crud
-    path('todo/create', views.createUserTodo,name='createUserTodo'),
-    path('todo/read/<int:user_id>'  , views.readUserTodos,name='readUserTodos'),
-    path('todo/update/<int:todo_id>', views.updateUserTodo,name='updateUserTodo'),
-    path('todo/delete/<int:todo_id>', views.deleteUserTodo,name='deleteUserTodo'),
-
-    # paths for user crud
-    #path('user/create', views.createUser,name='createUser', ),
-    #path('user/login'  , views.loginUser,name='loginUser'),
-    path('user/update/<int:user_id>', views.updateUser, name='updateUser'),
-    path('user/delete/<int:user_id>', views.deleteUser,name='deleteUser'),
-
-
-
-
-    path('users/<int:id>',views.UserDetailAPIView.as_view()),
-    path('users/',views.UserListCreateAPIView.as_view()),
-    path('users/update/<int:id>/',views.UserUpdateAPIView.as_view()),
-    path('users/delete/<int:id>/',views.UserDestroyAPIView.as_view()),
-
-
-
+    path('auth/', obtain_auth_token),
+    
+    path('todos/<int:pk>'        , views.TodoDetailAPIView    .as_view(),name='todo-detail'),
+    path('todos/'                , views.TodoListCreateAPIView.as_view(),name='todo-list-create'),
+    path('todos/update/<int:pk>/', views.TodoUpdateAPIView    .as_view(),name='todo-delete'),
+    path('todos/delete/<int:pk>/', views.TodoDestroyAPIView   .as_view(),name='todo-update'),
 ]

@@ -1,23 +1,11 @@
 from django.db import models
+from django.conf import settings
 
-# Create your models here.
-
-class User(models.Model):
-    # id = db.Column(db.Integer,primary_key=True)
-    username = models.CharField(max_length=100,unique=True,blank=False)
-    password = models.CharField(max_length=65,blank=False,null=True)
-
-    # todos = db.relationship('Todo')
-
-    def __repr__(self) -> str:
-        return super().__repr__()
+User = settings.AUTH_USER_MODEL # auth.User
 
 class Todo(models.Model):
-    # id = db.Column(db.Integer,primary_key=True)
-    title = models.CharField(max_length=100,blank=False)
-    description = models.TextField()
-    completed = models.BooleanField(default=False)
-    user_id = models.ForeignKey(User,on_delete=models.CASCADE,null=True)
+    user        = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    title       = models.CharField(max_length=100, blank=False, unique=True)
+    description = models.TextField(blank=True, null=True)
+    completed   = models.BooleanField(default=False)
 
-    def __repr__(self) -> str:
-        return super().__repr__()
