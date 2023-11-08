@@ -1,66 +1,34 @@
-var url:string = "http://127.0.0.1:8000/api/";
+"use strict"
+var base_path: string = 'http://127.0.0.1:8000/api/';
+var auth_path: string = 'auth/';
+var list_create_path: string = 'todos/';
+var at:string = '';
+// get auth token
+var auth_token = getToken(base_path, auth_path, 'shawal', 'Namaganda.7',at);
+// get list of todos
+// var todos = getTodos(base_path, list_create_path, auth_token);
+// create a todo
+// var todo = createTodo(base_path, list_create_path, auth_token, 'test todo');
 
-// // fetch all todos using try catch
-async function fetchTodos(method:string, url:string) {
-    try {
-        const response = await fetch(url, {
-            method: method,
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        });
-        const json = await response.json();
-        console.log(json);
-    } catch (error) {
-        console.log(error);
-    }
+// get auth token
+async function getToken(base_path: string, auth_path: string, username: string, password: string,aat:string): Promise<string> {
+    var url: string = base_path + auth_path;
+    var response = await fetch(url, {
+        method: 'POST',
+        body: JSON.stringify({
+            username: username,
+            password: password
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+    var responseData=await response.json()
+    console.log(responseData['token'])
+    aat=responseData['token']
+    return responseData['token']
 }
 
-
-// // testing user login
-async function login(method:string, url:string, email:string, password:string) {
-    try {
-        const response = await fetch(url+'/'+email+'/'+password, {
-            method: method,
-        });
-        const json = await response.json();
-        console.log(json);
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-
-//create user
-async function createUser(method:string, url:string, name:string, email:string, password:string) {
-    try {
-        const response = await fetch(url, {
-            method: method,
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name: name,
-                email: email,
-                password: password
-            })
-        });
-        const json = await response.json();
-        console.log(json);
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-// createUser(
-//     'POST', 
-//     url + 'user/create', 
-//     'test', 
-//     'test', 
-//     'test'
-// );
-
-login('POST', url ,'test','test');
-
-// //fetchTodos('GET', url + 'todos/read/8');
-// fetchTodos('GET', url + 'todo/read/1'+'');
+console.log('auth_token: ' + auth_token);
+console.log('at: ' + at);

@@ -1,0 +1,20 @@
+<p>test-api works!</p>
+
+<h3> {{obj['token']|json}}</h3>
+
+<h4> {{ todos|json}}</h4>
+
+<div class="todo_list" *ngFor="let todo of todos">
+
+    <div class="todo_card" *ngIf="!this.todo.isComplete">
+      <h3> {{this.todo.title}} </h3>
+      <p> {{this.todo.desc}} </p>
+      <button id="delete_btn" >Delete</button>
+      <button class="form_btn" >Completed</button>
+    </div>
+
+  </div>
+
+  <div *ngIf="!todos?.length" class="msg container">
+    To do list is empty
+  </div>
